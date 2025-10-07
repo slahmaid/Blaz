@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* Moroccan palette */
+  --color-brand: #C25E00;       /* warm orange */
+  --color-brand-dark: #9B4D00;  /* deep clay */
+  --color-sand: #F5E6CA;        /* desert sand */
+  --color-gold: #D7B377;        /* brass/gold */
+  --color-ink: #171717;         /* text */
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI,
+    Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Utilities */
+.hero-overlay {
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0.45), rgb(0 0 0 / 0.2) 40%, rgb(0 0 0 / 0.6));
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.15);
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-white bg-brand hover:bg-brand-dark transition-colors;
+}
+
+.section-title {
+  @apply text-3xl md:text-5xl font-semibold tracking-tight text-ink;
+}
