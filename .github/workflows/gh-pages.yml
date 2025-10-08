@@ -1,9 +1,7 @@
-name: Deploy Morocco site to GitHub Pages
+name: (disabled) Deploy Morocco site to GitHub Pages
 
 on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+  workflow_dispatch: # disabled push trigger to avoid conflicts
 
 permissions:
   contents: read
