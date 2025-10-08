@@ -52,8 +52,9 @@ export async function generateStaticParams() {
   return DESTINATIONS.map((d) => ({ slug: d.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const dest = DESTINATIONS.find((d) => d.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const dest = DESTINATIONS.find((d) => d.slug === slug);
   if (!dest) return {} as Metadata;
   return {
     title: `${dest.title} Travel Guide | Discover Morocco`,
@@ -66,8 +67,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   } as Metadata;
 }
 
-export default function DestinationPage({ params }: { params: { slug: string } }) {
-  const dest = DESTINATIONS.find((d) => d.slug === params.slug);
+export default async function DestinationPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const dest = DESTINATIONS.find((d) => d.slug === slug);
   if (!dest)
     return (
       <main className="min-h-screen container-px py-10">
