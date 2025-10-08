@@ -108,7 +108,7 @@
         try {
           sessionStorage.setItem('order', JSON.stringify({ name, city, phone }));
         } catch(_) {}
-        window.location.href = '/merci.html';
+        window.location.href = 'merci.html';
       } catch (err) {
         setMsg('Une erreur est survenue. Veuillez réessayer.', false);
       } finally {
