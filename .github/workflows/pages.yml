@@ -27,52 +27,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Setup Node (for morocco build)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: morocco/package-lock.json
-
-      - name: Install deps (morocco)
-        working-directory: morocco
-        run: npm ci
-
-      - name: Compute base path for morocco subfolder
-        id: base
-        shell: bash
-        run: |
-          REPO_NAME="${{ github.event.repository.name }}"
-          if [[ "$REPO_NAME" == *.github.io ]]; then
-            echo "NEXT_PUBLIC_BASE_PATH=/morocco" >> $GITHUB_ENV
-          else
-            echo "NEXT_PUBLIC_BASE_PATH=/$REPO_NAME/morocco" >> $GITHUB_ENV
-          fi
-
-      - name: Build & export morocco
-        working-directory: morocco
-        env:
-          NEXT_PUBLIC_BASE_PATH: ${{ env.NEXT_PUBLIC_BASE_PATH }}
-        run: npm run export
-
-      - name: Prepare deploy artifact
-        shell: bash
-        run: |
-          set -euo pipefail
-          rm -rf dist
-          mkdir -p dist
-          # Root static landing
-          cp -a index.html merci.html dist/
-          cp -a assets dist/
-          if [ -f .nojekyll ]; then cp -a .nojekyll dist/; fi
-          # Morocco Next.js export under subfolder
-          mkdir -p dist/morocco
-          cp -a morocco/out/* dist/morocco/
-
-      - name: Upload artifact
+      - name: Upload artifact (root static site)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deploy
