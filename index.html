@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Lunettes intelligentes – Livraison gratuite au Maroc | 249 Dh</title>
+    <meta name="description" content="Lunettes connectées élégantes avec audio ouvert, appels mains libres et protection UV. 249 Dh, livraison gratuite partout au Maroc. Paiement à la livraison." />
+    <link rel="canonical" href="https://votre-domaine.ma/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="product" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content="Lunettes intelligentes – 249 Dh | Livraison gratuite au Maroc" />
+    <meta property="og:description" content="Audio ouvert, appels mains libres, protection UV. Paiement à la livraison. Livraison gratuite partout au Maroc." />
+    <meta property="og:url" content="https://votre-domaine.ma/" />
+    <meta property="og:site_name" content="Smarteye" />
+    <meta property="product:price:amount" content="249" />
+    <meta property="product:price:currency" content="MAD" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518552698745-c6ea8d6b9c4b?w=1200&q=80&auto=format&fit=crop" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lunettes intelligentes – 249 Dh | Livraison gratuite au Maroc" />
+    <meta name="twitter:description" content="Audio ouvert, appels mains libres, protection UV. Paiement à la livraison. Livraison gratuite partout au Maroc." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1518552698745-c6ea8d6b9c4b?w=1200&q=80&auto=format&fit=crop" />
+
+    <!-- JSON-LD Product Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Lunettes intelligentes",
+        "image": [
+          "https://images.unsplash.com/photo-1518552698745-c6ea8d6b9c4b?w=1200&q=80&auto=format&fit=crop"
+        ],
+        "description": "Lunettes connectées avec audio ouvert, appels mains libres et protection UV.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Smarteye"
+        },
+        "sku": "SUN-01",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://votre-domaine.ma/",
+          "priceCurrency": "MAD",
+          "price": "249",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    </script>
+
+    <style>
+      :root {
+        --bg: #0b1220;
+        --card: #111a2e;
+        --muted: #93a0b9;
+        --text: #e6edf7;
+        --primary: #00c2a8;
+        --primary-600: #00a792;
+        --accent: #4f46e5;
+        --success: #16a34a;
+        --warning: #f59e0b;
+        --error: #ef4444;
+        --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        --radius: 16px;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(1200px 600px at 10% -10%, #1b2a4b 0%, rgba(11, 18, 32, 0) 60%),
+                    radial-gradient(900px 600px at 100% 0%, #0e2334 0%, rgba(11, 18, 32, 0) 60%),
+                    var(--bg);
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; height: auto; display: block; }
+      button { font: inherit; }
+
+      .container { width: min(1120px, 92vw); margin: 0 auto; }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        backdrop-filter: saturate(1.2) blur(8px);
+        background: linear-gradient(to bottom, rgba(11,18,32,0.9), rgba(11,18,32,0.6));
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+      }
+      .brand-badge {
+        width: 34px; height: 34px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+        display: grid; place-items: center;
+        color: white; font-weight: 800;
+      }
+
+      .cta-top { display: none; }
+      @media (min-width: 720px) { .cta-top { display: inline-flex; } }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.08);
+        color: #0a0f1a;
+        background: linear-gradient(180deg, var(--primary) 0%, var(--primary-600) 100%);
+        box-shadow: 0 10px 20px rgba(0, 194, 168, 0.25);
+        cursor: pointer;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+        text-align: center;
+      }
+      .btn:hover { transform: translateY(-1px); filter: brightness(1.02); }
+      .btn:active { transform: translateY(0); filter: brightness(0.98); }
+      .btn.secondary {
+        background: transparent; color: var(--text);
+        border: 1px solid rgba(255,255,255,0.14);
+        box-shadow: none;
+      }
+
+      .hero { padding: 28px 0 24px; }
+      @media (min-width: 900px) { .hero { padding: 52px 0 36px; } }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
+        align-items: center;
+      }
+      @media (min-width: 900px) {
+        .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 34px; }
+      }
+
+      .eyebrow {
+        display: inline-flex; align-items: center; gap: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(0, 194, 168, 0.12);
+        color: #a7f3d0;
+        border: 1px solid rgba(0, 194, 168, 0.25);
+        font-weight: 600;
+      }
+
+      h1 { font-size: clamp(28px, 5vw, 48px); line-height: 1.1; margin: 14px 0 14px; }
+      .sub { color: var(--muted); font-size: 16px; line-height: 1.6; }
+
+      .price-row { display: flex; align-items: center; gap: 14px; margin: 18px 0; }
+      .price { font-size: 28px; font-weight: 800; letter-spacing: 0.3px; }
+      .badge { font-size: 13px; color: #a7f3d0; background: rgba(0,194,168,0.12); border: 1px solid rgba(0,194,168,0.25); padding: 6px 10px; border-radius: 999px; }
+
+      .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+
+      .trust {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px;
+      }
+      .trust .item { display: flex; gap: 8px; align-items: center; color: var(--muted); font-size: 14px; }
+
+      .card {
+        background: linear-gradient(180deg, rgba(17, 26, 46, 0.7), rgba(17, 26, 46, 0.4));
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-media { position: relative; }
+      .product-img {
+        border-radius: 18px;
+        border: 1px solid rgba(255,255,255,0.1);
+        overflow: hidden;
+      }
+
+      .features { padding: 18px 0 10px; }
+      @media (min-width: 900px) { .features { padding: 26px 0 14px; } }
+      .features-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+      @media (min-width: 720px) { .features-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; } }
+      .feature {
+        padding: 14px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08);
+        background: linear-gradient(180deg, rgba(17,26,46,0.6), rgba(17,26,46,0.35));
+      }
+      .feature h3 { margin: 4px 0 6px; font-size: 16px; }
+      .feature p { margin: 0; color: var(--muted); font-size: 14px; }
+
+      .order {
+        padding: 26px 0 56px;
+      }
+      .order-wrap {
+        display: grid; grid-template-columns: 1fr; gap: 16px;
+      }
+      @media (min-width: 900px) { .order-wrap { grid-template-columns: 1fr 1fr; gap: 20px; } }
+
+      .form-card { padding: 16px; }
+      @media (min-width: 720px) { .form-card { padding: 18px; } }
+      .form-title { margin: 0 0 8px; font-size: 22px; }
+      .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 8px; }
+      .kpi { text-align: center; padding: 10px; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; background: rgba(17,26,46,0.4); }
+      .kpi strong { font-size: 18px; display: block; }
+      .kpi span { color: var(--muted); font-size: 12px; }
+
+      form { display: grid; gap: 10px; margin-top: 12px; }
+      .field { display: grid; gap: 6px; }
+      label { font-size: 13px; color: var(--muted); }
+      input, select {
+        padding: 12px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(6, 11, 22, 0.6);
+        color: var(--text);
+        outline: none;
+        transition: border-color 0.15s ease, background 0.15s ease;
+      }
+      input::placeholder { color: #7d8aa6; }
+      input:focus, select:focus { border-color: var(--primary); background: rgba(6,11,22,0.75); }
+      .help { font-size: 12px; color: var(--muted); }
+      .error { font-size: 12px; color: #fecaca; display: none; }
+      .error.show { display: block; }
+
+      .submit-row { display: grid; gap: 8px; margin-top: 6px; }
+      .submit-row .btn { width: 100%; padding: 14px; font-weight: 700; }
+      .disclaimer { color: var(--muted); font-size: 12px; text-align: center; }
+
+      .sticky-cta {
+        position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%);
+        width: min(680px, 92vw);
+        padding: 8px;
+        background: rgba(11,18,32,0.8);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        backdrop-filter: blur(6px);
+        display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px;
+        z-index: 50;
+      }
+      .sticky-cta .price-mini { color: var(--text); font-weight: 700; }
+      .sticky-cta .ship { color: #a7f3d0; font-size: 12px; }
+      @media (min-width: 900px) { .sticky-cta { display: none; } }
+
+      footer { padding: 30px 0 60px; color: var(--muted); font-size: 14px; text-align: center; }
+      footer a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-badge">S</div>
+          <span>Smarteye</span>
+        </div>
+        <a class="btn cta-top" href="#commande" aria-label="Commander maintenant (249 Dh)">Commander maintenant — 249 Dh</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">🚚 Livraison gratuite partout au Maroc</div>
+            <h1>Lunettes intelligentes — style, musique et appels, sans effort</h1>
+            <p class="sub">Profitez d’un son ouvert discret, d’appels mains libres et d’une protection UV400, le tout dans une monture légère et confortable.</p>
+            <div class="price-row">
+              <div class="price">249 Dh</div>
+              <div class="badge">Paiement à la livraison (COD)</div>
+            </div>
+            <div class="hero-cta">
+              <a class="btn" href="#commande">Commander maintenant</a>
+              <a class="btn secondary" href="#caracteristiques">Découvrir les caractéristiques</a>
+            </div>
+            <div class="trust">
+              <div class="item">✅ Paiement à la livraison</div>
+              <div class="item">🕒 Livraison 24–72h</div>
+              <div class="item">🛡️ Garantie 7 jours</div>
+            </div>
+          </div>
+          <div class="hero-media">
+            <picture class="product-img card">
+              <source srcset="https://images.unsplash.com/photo-1518552698745-c6ea8d6b9c4b?w=1200&q=80&auto=format&fit=crop" type="image/jpeg" />
+              <img
+                src="https://images.unsplash.com/photo-1518552698745-c6ea8d6b9c4b?w=1200&q=80&auto=format&fit=crop"
+                alt="Lunettes intelligentes noires sur fond sombre"
+                width="1200" height="900"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section id="caracteristiques" class="features">
+        <div class="container">
+          <div class="features-grid">
+            <div class="feature">
+              <h3>Audio ouvert discret</h3>
+              <p>Écoutez votre musique sans isoler votre environnement. Idéal pour la ville.</p>
+            </div>
+            <div class="feature">
+              <h3>Appels mains libres</h3>
+              <p>Micro intégré et commandes simples pour rester concentré pendant vos trajets.</p>
+            </div>
+            <div class="feature">
+              <h3>Protection UV400</h3>
+              <p>Verres filtrants UV pour protéger vos yeux tout au long de la journée.</p>
+            </div>
+            <div class="feature">
+              <h3>Autonomie toute la journée</h3>
+              <p>Jusqu’à 6h d’écoute. Recharge rapide par USB-C.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="commande" class="order">
+        <div class="container order-wrap">
+          <div class="card form-card">
+            <h2 class="form-title">Passez votre commande maintenant</h2>
+            <div class="kpis">
+              <div class="kpi"><strong>249 Dh</strong><span>Prix fixe TTC</span></div>
+              <div class="kpi"><strong>Gratuite</strong><span>Livraison</span></div>
+              <div class="kpi"><strong>COD</strong><span>Paiement à la livraison</span></div>
+            </div>
+
+            <form id="order-form" novalidate>
+              <div class="field">
+                <label for="name">Nom complet</label>
+                <input id="name" name="name" type="text" placeholder="Votre nom" autocomplete="name" required minlength="2" />
+                <div class="error" id="err-name">Veuillez saisir votre nom.</div>
+              </div>
+
+              <div class="field">
+                <label for="city">Ville</label>
+                <select id="city" name="city" required>
+                  <option value="">Choisissez votre ville</option>
+                  <option>Casablanca</option>
+                  <option>Rabat</option>
+                  <option>Marrakech</option>
+                  <option>Fès</option>
+                  <option>Tanger</option>
+                  <option>Agadir</option>
+                  <option>Meknès</option>
+                  <option>Oujda</option>
+                  <option>Kénitra</option>
+                  <option>Tétouan</option>
+                  <option>Salé</option>
+                  <option>Laâyoune</option>
+                  <option>Autre</option>
+                </select>
+                <div class="error" id="err-city">Veuillez sélectionner votre ville.</div>
+              </div>
+
+              <div class="field">
+                <label for="phone">Téléphone</label>
+                <input id="phone" name="phone" type="tel" placeholder="0XXXXXXXXX ou +212XXXXXXXXX" inputmode="tel" autocomplete="tel" required pattern="^(\\+212|0)([ \-]?\\d){9}$" maxlength="16" />
+                <div class="help">Nous vous appellerons pour confirmer votre commande.</div>
+                <div class="error" id="err-phone">Numéro invalide (format marocain).</div>
+              </div>
+
+              <div class="submit-row">
+                <button id="submit" class="btn" type="submit">Commander (Paiement à la livraison)</button>
+                <button id="whatsapp" class="btn secondary" type="button">Commander via WhatsApp</button>
+                <div class="disclaimer" aria-live="polite" id="form-status"></div>
+              </div>
+            </form>
+          </div>
+
+          <div class="card" style="padding: 16px;">
+            <h3 style="margin-top: 0;">Pourquoi nous choisir ?</h3>
+            <ul style="margin: 8px 0 0 18px; line-height: 1.8;">
+              <li>Livraison gratuite partout au Maroc (24–72h selon la ville).</li>
+              <li>Paiement 100% à la livraison — aucune avance requise.</li>
+              <li>Retour sous 7 jours si le produit ne vous convient pas.</li>
+              <li>Assistance WhatsApp pour toute question.</li>
+            </ul>
+            <div style="margin-top: 16px; display: grid; gap: 8px;">
+              <div style="display:flex; align-items:center; gap:8px; color: var(--muted);"><span>📦</span><span>Expédié depuis le Maroc</span></div>
+              <div style="display:flex; align-items:center; gap:8px; color: var(--muted);"><span>🔒</span><span>Vos données sont protégées</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="sticky-cta">
+      <div>
+        <div class="price-mini">Lunettes intelligentes — 249 Dh</div>
+        <div class="ship">Livraison gratuite • Paiement à la livraison</div>
+      </div>
+      <a class="btn" href="#commande" aria-label="Commander maintenant">Commander</a>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div>© <span id="year"></span> Smarteye · <a href="#commande">Commander</a></div>
+      </div>
+    </footer>
+
+    <script>
+      // Configuration — à personnaliser
+      const WHATSAPP_NUMBER = "+212612345678"; // Remplacez par votre numéro WhatsApp business
+      const FORM_ENDPOINT = ""; // Optionnel: votre endpoint (ex: Google Apps Script / Form backend)
+      const PRODUCT_NAME = "Lunettes intelligentes";
+      const PRODUCT_PRICE = 249;
+      const CURRENCY = "MAD";
+
+      const form = document.getElementById("order-form");
+      const statusEl = document.getElementById("form-status");
+      const submitBtn = document.getElementById("submit");
+      const waBtn = document.getElementById("whatsapp");
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      function validateForm() {
+        const nameEl = document.getElementById("name");
+        const cityEl = document.getElementById("city");
+        const phoneEl = document.getElementById("phone");
+
+        let ok = true;
+        const show = (id, v) => { const el = document.getElementById(id); el.classList.toggle("show", v); };
+
+        if (!nameEl.value || nameEl.value.trim().length < 2) { ok = false; show("err-name", true); } else { show("err-name", false); }
+        if (!cityEl.value) { ok = false; show("err-city", true); } else { show("err-city", false); }
+        const phoneRegex = /^(\+212|0)([ \-]?\d){9}$/;
+        if (!phoneRegex.test(phoneEl.value.trim())) { ok = false; show("err-phone", true); } else { show("err-phone", false); }
+        return ok;
+      }
+
+      function orderPayload() {
+        const name = document.getElementById("name").value.trim();
+        const city = document.getElementById("city").value;
+        const phone = document.getElementById("phone").value.trim();
+        return { name, city, phone, product: PRODUCT_NAME, price: PRODUCT_PRICE, currency: CURRENCY, ts: new Date().toISOString() };
+      }
+
+      function waUrl(data) {
+        const message = `Nouvelle commande\\nProduit: ${data.product}\\nPrix: ${data.price} ${data.currency}\\nNom: ${data.name}\\nVille: ${data.city}\\nTéléphone: ${data.phone}`;
+        const encoded = encodeURIComponent(message);
+        return `https://wa.me/${WHATSAPP_NUMBER.replace(/[^\d]/g, "")}?text=${encoded}`;
+      }
+
+      async function postToEndpoint(data) {
+        if (!FORM_ENDPOINT) return { ok: false, status: 0 };
+        try {
+          const res = await fetch(FORM_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+          });
+          return { ok: res.ok, status: res.status };
+        } catch (e) {
+          return { ok: false, status: 0 };
+        }
+      }
+
+      function setSubmitting(isSubmitting) {
+        submitBtn.disabled = isSubmitting;
+        submitBtn.textContent = isSubmitting ? "Envoi en cours…" : "Commander (Paiement à la livraison)";
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        statusEl.textContent = "";
+        if (!validateForm()) {
+          statusEl.textContent = "Veuillez corriger les champs indiqués.";
+          return;
+        }
+        setSubmitting(true);
+        const data = orderPayload();
+        const res = await postToEndpoint(data);
+        // Toujours ouvrir WhatsApp comme canal principal / fallback
+        window.open(waUrl(data), "_blank");
+        if (res.ok) {
+          statusEl.textContent = "Merci ! Votre commande a été envoyée. Nous vous appellerons pour confirmer.";
+          form.reset();
+        } else {
+          statusEl.textContent = "Commande envoyée via WhatsApp. Si besoin, nous vous contacterons rapidement.";
+        }
+        setSubmitting(false);
+      });
+
+      waBtn.addEventListener("click", () => {
+        statusEl.textContent = "";
+        if (!validateForm()) {
+          statusEl.textContent = "Veuillez corriger les champs indiqués.";
+          return;
+        }
+        const data = orderPayload();
+        window.open(waUrl(data), "_blank");
+        statusEl.textContent = "Redirection vers WhatsApp…";
+      });
+
+      // Amélioration UX: scroll fluide pour les ancres
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (ev) => {
+          const href = a.getAttribute('href');
+          const id = href && href.slice(1);
+          if (!id) return;
+          const target = document.getElementById(id);
+          if (!target) return;
+          ev.preventDefault();
+          window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+        });
+      });
+    </script>
+  </body>
+  </html>
+
