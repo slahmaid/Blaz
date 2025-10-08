@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description:
       "Inspire your journey through Morocco with destinations, culture, and travel blog.",
     type: "website",
-    url: "https://example.com/",
+    url: "https://slahmaid.github.io/Blaz/",
     images: [
       {
         url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://slahmaid.github.io/Blaz/"),
 };
 
 export default function RootLayout({
