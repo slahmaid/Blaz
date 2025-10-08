@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merci pour votre commande – Lunettes intelligentes</title>
+  <meta name="robots" content="noindex">
+  <link rel="preload" href="/assets/styles.css" as="style">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand">
+        <span class="brand__logo" aria-hidden="true">🕶️</span>
+        <span class="brand__name">Lunettes intelligentes</span>
+      </div>
+      <a href="/index.html#commande" class="btn btn--ghost">Retour</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="order">
+      <div class="container">
+        <h1>Merci pour votre commande !</h1>
+        <p class="subtitle">Nous vous appellerons bientôt pour confirmer les détails et la livraison.</p>
+        <div class="card" id="order-summary" style="max-width:560px;">
+          <h3>Récapitulatif</h3>
+          <p><strong>Produit:</strong> Lunettes intelligentes</p>
+          <p><strong>Prix:</strong> 249 DH • Livraison gratuite</p>
+          <p id="summary-name"></p>
+          <p id="summary-city"></p>
+          <p id="summary-phone"></p>
+        </div>
+        <div style="height:12px"></div>
+        <a href="/index.html" class="btn btn--primary">Retour à l’accueil</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Lunettes intelligentes</p>
+      <a href="/index.html#commande" class="btn btn--ghost">Commander</a>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+    var data = null;
+    try { data = JSON.parse(sessionStorage.getItem('order') || 'null'); } catch(e) {}
+    function maskPhone(p){
+      if (!p) return '';
+      var s = p.replace(/\s|-/g, '');
+      if (s.length >= 6) return s.slice(0, 4) + '••••' + s.slice(-2);
+      return s;
+    }
+    if (data) {
+      var name = document.getElementById('summary-name');
+      var city = document.getElementById('summary-city');
+      var phone = document.getElementById('summary-phone');
+      if (name) name.textContent = 'Nom: ' + (data.name || '');
+      if (city) city.textContent = 'Ville: ' + (data.city || '');
+      if (phone) phone.textContent = 'Téléphone: ' + maskPhone(data.phone || '');
+    } else {
+      var card = document.getElementById('order-summary');
+      if (card) card.innerHTML = '<p>Votre commande a été enregistrée.</p>';
+    }
+  })();
+  </script>
+</body>
+</html>
+

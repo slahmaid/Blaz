@@ -5,6 +5,7 @@
   const form = document.getElementById('order-form');
   const msg = document.getElementById('form-msg');
   const submitBtn = document.getElementById('submit-btn');
+  const endpoint = form && typeof form.getAttribute === 'function' ? (form.getAttribute('data-endpoint') || '').trim() : '';
 
   function setMsg(text, ok) {
     if (!msg) return;
@@ -31,16 +32,24 @@
     };
   }
 
-  async function fakeSubmit(payload) {
-    // Replace this with your real endpoint (Google Sheet, webhook, etc.)
-    // For now, we simulate a fast network call.
-    return new Promise((resolve) => setTimeout(resolve, 700));
+  async function postWithTimeout(url, options, timeoutMs = 10000) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const res = await fetch(url, { ...options, signal: controller.signal });
+      clearTimeout(timer);
+      return res;
+    } catch (e) {
+      clearTimeout(timer);
+      throw e;
+    }
   }
 
   if (form && submitBtn) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const { name, city, phone } = serializeForm(form);
+      const honeypot = (new FormData(form).get('website') || '').toString().trim();
 
       if (!name || name.length < 3) {
         setMsg('Veuillez saisir votre nom complet.', false);
@@ -55,14 +64,51 @@
         return;
       }
 
+      // If honeypot is filled, pretend success without sending
+      if (honeypot) {
+        setMsg('Merci ! Votre commande est bien reçue. Nous vous appellerons pour confirmer.', true);
+        try {
+          sessionStorage.setItem('order', JSON.stringify({ name, city, phone }));
+        } catch(_) {}
+        form.reset();
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.textContent = 'Envoi...';
       setMsg('', true);
 
       try {
-        await fakeSubmit({ name, city, phone });
-        setMsg('Merci ! Votre commande est bien reçue. Nous vous appellerons pour confirmer.', true);
-        form.reset();
+        const urlParams = new URLSearchParams(window.location.search);
+        const payload = {
+          product: 'Lunettes intelligentes',
+          price: 249,
+          currency: 'MAD',
+          name, city, phone,
+          utm_source: urlParams.get('utm_source') || '',
+          utm_medium: urlParams.get('utm_medium') || '',
+          utm_campaign: urlParams.get('utm_campaign') || '',
+          referrer: document.referrer || '',
+          page: window.location.href,
+          createdAt: new Date().toISOString()
+        };
+
+        if (endpoint) {
+          const res = await postWithTimeout(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          }, 12000);
+          if (!res.ok) throw new Error('Bad response: ' + res.status);
+        } else {
+          // No endpoint configured: simulate fast response
+          await new Promise((resolve) => setTimeout(resolve, 600));
+        }
+
+        try {
+          sessionStorage.setItem('order', JSON.stringify({ name, city, phone }));
+        } catch(_) {}
+        window.location.href = '/merci.html';
       } catch (err) {
         setMsg('Une erreur est survenue. Veuillez réessayer.', false);
       } finally {

@@ -82,6 +82,8 @@ section { padding: 56px 0; }
 .form__msg { min-height: 22px; font-weight: 600; margin-top: 6px; }
 .form__msg--ok { color: #166534; }
 .form__msg--err { color: #991b1b; }
+/* Honeypot (hidden) */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
 .secure { display: flex; gap: 16px; flex-wrap: wrap; color: var(--muted); margin-top: 10px; }
 

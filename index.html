@@ -138,7 +138,7 @@
       <div class="container">
         <h2>Commander maintenant – 249 DH</h2>
         <p class="order__note">Livraison gratuite partout au Maroc • Paiement à la livraison</p>
-        <form id="order-form" class="form" novalidate>
+        <form id="order-form" class="form" novalidate data-endpoint="">
           <div class="form__row">
             <label for="name">Nom et prénom</label>
             <input id="name" name="name" type="text" placeholder="Votre nom complet" autocomplete="name" required>
@@ -151,6 +151,10 @@
             <label for="phone">Téléphone (Maroc)</label>
             <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="06 XX XX XX XX" required>
             <small class="hint">Format accepté: 0X XX XX XX XX ou +212 X XX XX XX XX</small>
+          </div>
+          <div class="form__row hp" aria-hidden="true">
+            <label for="website">Site web</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
           </div>
           <button id="submit-btn" class="btn btn--primary btn--full" type="submit">Confirmer la commande</button>
           <p id="form-msg" class="form__msg" role="status" aria-live="polite"></p>
